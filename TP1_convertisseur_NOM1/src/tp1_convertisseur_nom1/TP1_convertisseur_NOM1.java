@@ -18,10 +18,27 @@ public class TP1_convertisseur_NOM1 {
      */
     public static void main(String[] args) {
         double temp; 
+        double result = 0;
         Scanner sc = new Scanner(System.in);        
-    System.out.println("\n Entrer un nombre entier :");
+    System.out.println("\n Bonjour saisissez une valeur:");
     temp=sc.nextDouble();
-    System.out.println("\n "+ (temp +273.15));
+    System.out.println("\n Saisissez la conversion que vous souhaiter effectuer: \n 1) Celcius Vers Kelvin \n 2) Kelvin Vers Celcius \n 3) Farenheit Vers Celcius \n 4) Celcius Vers Farenheit \n 5) Kelvin Vers Farenheitn \n 6) Farenheit Vers Kelvin");
+        double operateur = sc.nextDouble();
+        if (operateur == 1) {
+             result= CelciusVersKelvin(temp) ;}
+        if (operateur ==2){
+              result= KelvinVersCelcius(temp) ;}
+        if (operateur ==3){
+                result= FarenheitVersCelcius(temp) ;}
+        if (operateur ==4){
+             result = CelciusVersFarenheit(temp);}
+        if (operateur ==5) {
+                result = KelvinVersFarenheit(temp);}
+        if (operateur ==6) {
+                result = FarenheitVersKelvin(temp);}
+    
+    System.out.println("\n Le resultat est:"+ result);
+    
      
     }
     public static double CelciusVersKelvin (double tCelcius) {
