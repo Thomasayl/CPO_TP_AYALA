@@ -43,8 +43,12 @@ public class Convertisseur {
     
     @Override 
     public String toString () {
-       return "nb de conversions"+ nbConversions;
+       return "nb de conversions"+ nbConversions;  
 }
+    public void effectuerConversion() {
+        // Simulez une conversion ici
+        nbConversions++;
+    }
     }
 
         
