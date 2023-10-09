@@ -30,5 +30,9 @@ public class TP2_Bieres_AYALA {
     
 
        uneBiere.Decapsuler();
+       secondBiere.Decapsuler();
+       troisiemeBiere.Decapsuler();
+       quatreBiere.Decapsuler();
+       cinqBiere.Decapsuler();
     }
 }
