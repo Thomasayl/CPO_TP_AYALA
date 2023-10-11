@@ -46,7 +46,6 @@ public class Convertisseur {
        return "nb de conversions"+ nbConversions;  
 }
     public void effectuerConversion() {
-        // Simulez une conversion ici
         nbConversions++;
     }
     }
