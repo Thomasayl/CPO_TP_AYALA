@@ -23,6 +23,20 @@ public class Guerrier extends Personnage {
 
     public Guerrier(String unNom, int unNiveau, String cheval) {
         super(unNom, unNiveau);
+        
     }
+        @Override
+public String toString() {
+String chaine_a_retourner;
+if (cheval == true){
+chaine_a_retourner = ("Le Guerrier "+nom+ " a "+niveau+ "point de vie et est a cheval et utilise "+arme_en_main);
+return chaine_a_retourner;
+}
+else {
+    chaine_a_retourner = ("Le Guerrier "+nom+ " a "+niveau+ "point de vie et est a pieds et utilise "+arme_en_main);
+
+   return chaine_a_retourner; 
+}
+}
 }
 

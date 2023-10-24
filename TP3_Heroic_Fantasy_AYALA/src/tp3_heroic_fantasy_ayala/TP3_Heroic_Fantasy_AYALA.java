@@ -37,8 +37,8 @@ public class TP3_Heroic_Fantasy_AYALA {
          Magicien Magicien1 = new Magicien ( "Gandalf", 65, "confirmé");
          Magicien Magicien2 = new Magicien ("Garcimore", 44, "novice");
          
-         Guerrier Guerrier1 = new Guerrier ("Conan", 78, "à pied");
-         Guerrier Guerrier2 = new Guerrier ("Lannister", 45, "à cheval");
+         Guerrier Guerrier1 = new Guerrier ("Aragorn", 78, "à pied");
+         Guerrier Guerrier2 = new Guerrier ("Soron", 45, "à cheval");
          
          ArrayList<Personnage> liste1 = new ArrayList<Personnage>();
           liste1.add(Magicien1);
@@ -51,6 +51,29 @@ public class TP3_Heroic_Fantasy_AYALA {
         System.out.println (personnage);   
     }
           
+        Guerrier guerrier3 = new Guerrier("Legolas l'Elfe", 2, "à pied");
+        Magicien magicien3 = new Magicien ("Saouman le blanc", 8, "novice");
+        Baton baton3 = new Baton ("branche", 5 , 5);
+        Baton baton4 = new Baton ("branche2", 5 , 5);
+        Baton baton5 = new Baton ("branche3", 5 , 5);
+        
+        Epee épée3 = new Epee ("glaive", 5, 6);
+        Epee épée4 = new Epee ("glaive2", 5, 6);
+        Epee épée5 = new Epee ("glaive3", 5, 6);
+        
+        guerrier3.ajouter_arme(épée3);
+        guerrier3.ajouter_arme(épée4);
+        guerrier3.ajouter_arme(baton5);
+        
+        magicien3.ajouter_arme(baton3);
+        magicien3.ajouter_arme(baton4);
+        magicien3.ajouter_arme(épée5);
+
+        guerrier3.équiper_arme("glaive");
+        System.out.println(guerrier3);
+        
+        magicien3.équiper_arme("glaive2");
+        System.out.println(magicien3);        
          
     }
     

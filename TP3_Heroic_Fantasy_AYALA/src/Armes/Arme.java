@@ -4,6 +4,7 @@
  */
 package Armes;
 
+
 /**
  *
  * @author ayala
@@ -21,14 +22,19 @@ if (unNiveau > 100){
 if (unNiveau <0){
     niveau =0 ;
 }
-
-
-
 }
+   public String getNom() {
+        return nom;
+    }
+    
+
+
+
+
 @Override
     public String toString() {
 String chaine;
 chaine = "Le nom est " + nom +  " et le niveau est  " + niveau ;
 return chaine ;
-}
+    }
 }
