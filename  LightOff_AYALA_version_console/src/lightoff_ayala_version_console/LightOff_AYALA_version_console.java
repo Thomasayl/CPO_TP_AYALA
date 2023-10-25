@@ -5,6 +5,7 @@
 package lightoff_ayala_version_console;
 
 
+
 /**
  *
  * @author ayala
@@ -32,7 +33,24 @@ public class LightOff_AYALA_version_console {
        cellule2.activerCellule();
        cellule2.toString();
        
+       GrilleDeJeu maGrille = new GrilleDeJeu(7, 7);
+       System.out.println(maGrille);
        
+        maGrille.activerLigneDeCellules(2); 
+        System.out.println(maGrille);
+        maGrille.activerColonneDeCellules(3); 
+        System.out.println(maGrille);
+        maGrille.activerDiagonaleDescendante(); 
+        System.out.println(maGrille);
+        maGrille.activerDiagonaleMontante();
+        System.out.println(maGrille);
+        maGrille.activerLigneColonneOuDiagonaleAleatoire(); 
+        System.out.println(maGrille);
+        maGrille.melangerMatriceAleatoirement(5);
+        
+        // Affichez la grille apr?s les modifications
+        System.out.println("Grille modifiee :");
+        System.out.println(maGrille);
        
        
        
