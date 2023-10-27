@@ -18,7 +18,7 @@ public class GrilleDeJeu {
     private int nbColonnes;
     
     /**
-     *Cr?e une nouvelle grille de jeu avec un nombre de ligne et de colonne choisit en entr?e 
+     *Crée une nouvelle grille de jeu avec un nombre de ligne et de colonne choisit en entr?e 
      * @param p_nbLignes
      * @param p_nbColonnes
      */
@@ -36,7 +36,7 @@ public class GrilleDeJeu {
     }
     
     /**
-     *permet ?teindre chaque cellule de la grille en parcourant la grille en lignes et en colonnes
+     *permet d'eteindre chaque cellule de la grille en parcourant la grille en lignes et en colonnes
      */
     public void eteindreToutesLesCellules() {
         for (int i = 0; i < nbLignes; i++) {
@@ -99,18 +99,33 @@ public class GrilleDeJeu {
     }
 
     /**
-     * Permet d'?teindre toute les cellules de la grille puis de melanger en utilisant la methode qui active une ligne une colonne ou une diagonale aleatoirement
+     * Permet d'éteindre toute les cellules de la grille puis de melanger en utilisant la methode qui active une ligne une colonne ou une diagonale aleatoirement
      * @param nbTours
      */
     public void melangerMatriceAleatoirement(int nbTours) {
-        for (int i = 0; i < nbTours; i++) {
-            eteindreToutesLesCellules();
-            activerLigneColonneOuDiagonaleAleatoire();
+        eteindreToutesLesCellules(); // Éteindre toutes les cellules au départ
+    Random random = new Random();
+
+    for (int tour = 0; tour < nbTours; tour++) {
+        int choix = random.nextInt(3); // 0 pour ligne, 1 pour colonne, 2 pour diagonale
+
+        switch (choix) {
+            case 0:
+                activerLigneAleatoire();
+                break;
+            case 1:
+                activerColonneAleatoire();
+                break;
+            case 2:
+                activerDiagonaleAleatoire();
+                break;
         }
     }
 
+    }
+
     /**
-     *Permet d'activer une ligne enti?re de la grille, ?teint tout les ?l?ments de la ligne qui ?tait allum? et allume les ?l?ments qui ?taient ?teint
+     *Permet d'activer une ligne entiére de la grille, éteint tout les éléments de la ligne qui était allumé et allume les éléments qui étaient éteint
      * @param idLigne
      */
     public void activerLigneDeCellules(int idLigne) {
@@ -120,7 +135,7 @@ public class GrilleDeJeu {
     }
 
     /**
-     *Permet d'activer une colonne enti?re de la grille, ?teint tout les ?l?ments de la colonne qui ?taient allum? et allume les ?l?ments qui ?taient ?teint
+     *Permet d'activer une colonne entière de la grille, éteint tout les éléments de la colonne qui étaient allumé et allume les éléments qui étaient éteint
      * @param idColonne
      */
     public void activerColonneDeCellules(int idColonne) {
@@ -130,7 +145,7 @@ public class GrilleDeJeu {
     }
 
     /**
-     *Permet d'activer la diagonale descendante de la grille, ?teint tout les ?l?ments de la diagonale qui ?tait allum? et allume les ?l?ments qui ?taient ?teint
+     *Permet d'activer la diagonale descendante de la grille, éteint tout les ?l?ments de la diagonale qui était allumé et allume les éléments qui étaient éteint
      */
     public void activerDiagonaleDescendante() {
         int minDim = Math.min(nbLignes, nbColonnes);
@@ -140,7 +155,7 @@ public class GrilleDeJeu {
     }
 
     /**
-     *Permet d'activer la diagonale montante de la grille, ?teint tout les ?l?ments de la diagonale qui ?tait allum? et allume les ?l?ments qui ?taient ?teint
+     *Permet d'activer la diagonale montante de la grille, éteint tout les éléments de la diagonale qui était allumé et allume les éléments qui étaient éteint
      */
     public void activerDiagonaleMontante() {
         int minDim = Math.min(nbLignes, nbColonnes);
@@ -150,7 +165,7 @@ public class GrilleDeJeu {
     }
 
     /**
-     *Verifie si l'une des cellules est allum? en utilisant la m?thode estEteint 
+     *Verifie si l'une des cellules est allumé en utilisant la méthode estEteint 
      * @return
      */
     public boolean cellulesToutesEteintes() {
@@ -164,7 +179,11 @@ public class GrilleDeJeu {
         return true;
         }
 
-   @Override
+    /**
+     * Permet d'afficher dans la console la grille finale en fonction du nombre de lignes et de colonnes choisis par l'utilisateur
+     * @return
+     */
+    @Override
 public String toString() {
     StringBuilder builder = new StringBuilder();
 
@@ -175,10 +194,10 @@ public String toString() {
     }
     builder.append("\n");
 
-    // Ligne de s?paration
+    // Ligne de séparation
     builder.append("---|");
     for (int j = 0; j < nbColonnes; j++) {
-        builder.append("----|");
+        builder.append("---|");
     }
     builder.append("\n");
 
@@ -194,10 +213,10 @@ public String toString() {
         }
         builder.append("\n");
 
-        // Ligne de s?paration
+        // Ligne de séparation
         builder.append("---|");
         for (int j = 0; j < nbColonnes; j++) {
-            builder.append("----|");
+            builder.append("---|");
         }
         builder.append("\n");
     }
