@@ -4,6 +4,8 @@
  */
 package lightoff_ayala_version_console;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -15,10 +17,16 @@ public class LightOff_AYALA_version_console {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Partie partie = new Partie();
+         Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Choisissez la difficulté (facile, moyen, difficile) : ");
+        String difficulty = scanner.nextLine();
+
+        // Créez une instance de Partie en passant la difficulté choisie
+        Partie partie = new Partie(difficulty);
         
         // Test de la méthode initialiserPartie
-        partie.initialiserPartie();
+        // partie.initialiserPartie();
         
         // Test de la méthode lancerPartie (jouer une partie compléte)
         partie.lancerPartie();

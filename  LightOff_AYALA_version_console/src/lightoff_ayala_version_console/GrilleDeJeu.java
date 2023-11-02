@@ -16,6 +16,22 @@ public class GrilleDeJeu {
     private CelluleLumineuse[][] matriceCellules;
     private int nbLignes ;
     private int nbColonnes;
+
+    public int getNbLignes() {
+        return nbLignes;
+    }
+
+    public void setNbLignes(int nbLignes) {
+        this.nbLignes = nbLignes;
+    }
+
+    public int getNbColonnes() {
+        return nbColonnes;
+    }
+
+    public void setNbColonnes(int nbColonnes) {
+        this.nbColonnes = nbColonnes;
+    }
     
     /**
      *Crée une nouvelle grille de jeu avec un nombre de ligne et de colonne choisit en entr?e 
