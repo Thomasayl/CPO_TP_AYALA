@@ -20,16 +20,19 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         int j;
         int nbCoupsMax;
         
+    
+        
     public void initialiserPartie() {
     grille.eteindreToutesLesCellules();
-    grille.melangerMatriceAleatoirement(200);
+    grille.melangerMatriceAleatoirement(10000);
 }
     /**
      * Creates new form FenetrePrincipale
      */
     public FenetrePrincipale(int nbLignes, int nbColonnes, int nbCoupsMax) {
         initComponents();
-        
+        this.nbCoups = 0;
+        this.nbCoupsMax = nbCoupsMax;
         this.grille = new GrilleDeJeu(nbLignes, nbColonnes);
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
         initialiserPartie();

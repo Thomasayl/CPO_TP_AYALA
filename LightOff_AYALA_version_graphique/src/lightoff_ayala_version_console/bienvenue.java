@@ -120,6 +120,7 @@ public class bienvenue extends javax.swing.JFrame {
         FenetrePrincipale f = new FenetrePrincipale (7,7,10);
         f.setVisible(true);
         this.dispose();
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
