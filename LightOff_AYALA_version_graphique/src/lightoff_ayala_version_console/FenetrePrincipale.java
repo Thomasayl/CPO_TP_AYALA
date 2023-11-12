@@ -65,10 +65,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     if (nbCoups == nbCoupsMax){
         FenetreDefaite f = new FenetreDefaite() ;
         f.setVisible(true) ;
+        FenetrePrincipale.this.dispose();
     }
     if (grille.cellulesToutesEteintes() == true){
         FenetreVictoire f = new FenetreVictoire();
-        f.setVisible(true) ;
+        f.setVisible(true) ; 
+        FenetrePrincipale.this.dispose();
+        
        
     }
      
@@ -90,10 +93,12 @@ PanneauBoutonVerticaux.add(bouton_ligne);
     if (nbCoups == nbCoupsMax){
         FenetreDefaite f = new FenetreDefaite() ;
         f.setVisible(true) ;
+        FenetrePrincipale.this.dispose();
     }
     if (grille.cellulesToutesEteintes() == true){
         FenetreVictoire f = new FenetreVictoire();
         f.setVisible(true) ;
+        FenetrePrincipale.this.dispose();
         
     }
     repaint();
