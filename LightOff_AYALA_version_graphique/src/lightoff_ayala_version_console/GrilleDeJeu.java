@@ -16,6 +16,15 @@ public class GrilleDeJeu {
     CelluleLumineuse[][] matriceCellules;
     private int nbLignes ;
     private int nbColonnes;
+    int difficulte;
+
+    public int getDifficulte() {
+        return difficulte;
+    }
+
+    public void setDifficulte(int difficulte) {
+        this.difficulte = difficulte;
+    }
 
     public int getNbLignes() {
         return nbLignes;
@@ -38,9 +47,10 @@ public class GrilleDeJeu {
      * @param p_nbLignes
      * @param p_nbColonnes
      */
-    public GrilleDeJeu (int p_nbLignes, int p_nbColonnes) {
+    public GrilleDeJeu (int p_nbLignes, int p_nbColonnes, int difficulte) {
     nbLignes = p_nbLignes;
     nbColonnes = p_nbColonnes;
+    this.difficulte = difficulte;
    
     matriceCellules = new CelluleLumineuse[nbLignes][nbColonnes];
     
@@ -90,7 +100,7 @@ public class GrilleDeJeu {
         int ligne = random.nextInt(nbLignes);
 
         for (int j = 0; j < nbColonnes; j++) {
-            matriceCellules[ligne][j].activerCellule();
+            matriceCellules[ligne][j].activerCellule(difficulte);
         }
     }
 
@@ -99,7 +109,7 @@ public class GrilleDeJeu {
         int colonne = random.nextInt(nbColonnes);
 
         for (int i = 0; i < nbLignes; i++) {
-            matriceCellules[i][colonne].activerCellule();
+            matriceCellules[i][colonne].activerCellule(difficulte);
         }
     }
 
@@ -146,7 +156,7 @@ public class GrilleDeJeu {
      */
     public void activerLigneDeCellules(int idLigne) {
         for (int j = 0; j < nbColonnes; j++) {
-            matriceCellules[idLigne][j].activerCellule();
+            matriceCellules[idLigne][j].activerCellule(difficulte);
         }
     }
 
@@ -156,7 +166,7 @@ public class GrilleDeJeu {
      */
     public void activerColonneDeCellules(int idColonne) {
         for (int i = 0; i < nbLignes; i++) {
-            matriceCellules[i][idColonne].activerCellule();
+            matriceCellules[i][idColonne].activerCellule(difficulte);
         }
     }
 
@@ -166,7 +176,7 @@ public class GrilleDeJeu {
     public void activerDiagonaleDescendante() {
         int minDim = Math.min(nbLignes, nbColonnes);
         for (int i = 0; i < minDim; i++) {
-            matriceCellules[i][i].activerCellule();
+            matriceCellules[i][i].activerCellule(difficulte);
         }
     }
 
@@ -176,7 +186,7 @@ public class GrilleDeJeu {
     public void activerDiagonaleMontante() {
         int minDim = Math.min(nbLignes, nbColonnes);
         for (int i = 0; i < minDim; i++) {
-            matriceCellules[i][nbColonnes - 1 - i].activerCellule();
+            matriceCellules[i][nbColonnes - 1 - i].activerCellule(difficulte);
         }
     }
 

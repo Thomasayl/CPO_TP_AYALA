@@ -27,11 +27,11 @@ public class Partie {
     public GrilleDeJeu difficulte(String dif) {
     GrilleDeJeu grille = null;
     if (dif.equals("facile")) {
-        grille = new GrilleDeJeu(3, 3);
+        grille = new GrilleDeJeu(3, 3,2);
     } else if (dif.equals("moyen")) {
-        grille = new GrilleDeJeu(5, 5);
+        grille = new GrilleDeJeu(5, 5,2);
     } else if (dif.equals("difficile")) {
-        grille = new GrilleDeJeu(7, 7);
+        grille = new GrilleDeJeu(7, 7,1);
     }
     return grille;
 }

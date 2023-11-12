@@ -19,6 +19,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         int i;
         int j;
         int nbCoupsMax;
+        int diff =0;
         
     
         
@@ -29,11 +30,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     /**
      * Creates new form FenetrePrincipale
      */
-    public FenetrePrincipale(int nbLignes, int nbColonnes, int nbCoupsMax) {
+    public FenetrePrincipale(int nbLignes, int nbColonnes, int nbCoupsMax, int diff) {
         initComponents();
         this.nbCoups = 0;
         this.nbCoupsMax = nbCoupsMax;
-        this.grille = new GrilleDeJeu(nbLignes, nbColonnes);
+        this.grille = new GrilleDeJeu(nbLignes, nbColonnes, diff);
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
         initialiserPartie();
         for (int i=0; i < nbLignes; i++) {

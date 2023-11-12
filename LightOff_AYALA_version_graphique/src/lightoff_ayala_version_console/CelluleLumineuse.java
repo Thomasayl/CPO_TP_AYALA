@@ -9,27 +9,37 @@ package lightoff_ayala_version_console;
  * @author ayala
  */
 public class CelluleLumineuse {
-    private boolean etat ;
+    private int etat ;
 
     /**
      * Met chaque nouvelle cellule en mode ?teinte
      * @param etat = false
      */
     public CelluleLumineuse() {
-        etat = false;
+        this.etat = 1;
+        
     }
         
     /**
      * Inverse l'etat de la cellule, si elle ?tait allum?, la m?thode l'?teint et inversement
      * 
      */
-    public void activerCellule (){
-        if (etat == false) {
-            etat= true ;
-        }
-        else {
-            etat= false;
-        }
+    public void activerCellule (int diff){
+        if (diff==1) {
+            if (etat == 1) {
+                etat=2;
+            } else if (etat==2) {
+                etat=3;
+            } else {
+                etat=1;
+            }
+    } else {
+            if (etat == 1) {
+                etat=2;
+            } else {
+                etat=1;
+            }
+    }
     }
 
     /**
@@ -37,59 +47,68 @@ public class CelluleLumineuse {
      * 
      */
     public void eteindreCellule(){
-        if (etat == true){
-        etat = false ;
-        }
+        if (etat == 2 || etat==3 ){
+        etat = 1 ;
+        etat=1;
     }
-        
+    }  
     /**
      * Permet de savoir si la cellule est bien ?t?inte, renvoie true si elle est ?teinte, false si elle est allum?e 
      * @return
      */
-    public boolean estEteint(){ 
-        if (etat == false) {
-           return true ;
-        }
-        else {
+   public boolean estEteint(){ 
+        if (etat==1) {
+            return true;
+        } else {
             return false;
         }
-    }
+   }
     
     /**
-     * Permet de renvoyer l'?tat actuel de la cellule, true si elle est allum?e et false si elle est ?tainte 
+     * Permet de savoir si la cellule est allumée
+     * @return
      */
-    public void getEtat(){
-         if (etat == false) {
-            etat= false ;
+    public boolean estAllume(){
+        if (etat == 2){
+            return true;
         }
-        if (etat== true) {
-            etat= true;
-        }
+       return false;
     }
-
+    
+   public boolean estAutre(){
+        if (etat == 3){
+            return true;
+        }
+       return false;
+    }
+    /**
+     * Permet de renvoyer l'?tat actuel de la cellule, true si elle est allum?e et false si elle est ?tainte
+     * @return 
+     */
+       public int getEtat() {
+        return etat;
+    }
     /**
      * Affiche X si la cellule est allum?e et O si la cellule est ?teinte 
      * @return
      */
     @Override
     public String toString() {
-       if (etat == true){
+       if (etat == 1){
         System.out.println("X");
 }
-    else {
+       if (etat == 2) {
         System.out.println("O");
        
     }
-        return null;
-    
+        if (etat == 3) {
+        System.out.println("N");
     
     }
+        return null;
+        
+    }
 }
-
-    
-    
-    
-    
     
     
     

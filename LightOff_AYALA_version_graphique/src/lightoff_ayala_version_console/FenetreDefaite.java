@@ -126,20 +126,20 @@ public class FenetreDefaite extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FacileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacileActionPerformed
-         FenetrePrincipale f = new FenetrePrincipale (7,7,10);
+         FenetrePrincipale f = new FenetrePrincipale (7,7,15,2);
          f.setVisible(true);
          this.dispose();
         
     }//GEN-LAST:event_FacileActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         FenetrePrincipale f = new FenetrePrincipale (20,20,25);
+         FenetrePrincipale f = new FenetrePrincipale (7,7,30,1);
          f.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         FenetrePrincipale f = new FenetrePrincipale (10,10,15);
+         FenetrePrincipale f = new FenetrePrincipale (12,12,25,2);
          f.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

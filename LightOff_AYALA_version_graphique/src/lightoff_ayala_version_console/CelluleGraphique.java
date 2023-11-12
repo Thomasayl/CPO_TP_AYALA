@@ -29,17 +29,20 @@ public class CelluleGraphique extends JButton {
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
+     super.paintComponent(g);
+    
         if (celluleLumineuseAssociee.estEteint()) {
             g.setColor(Color.red);
         }
-        else {
+        else if (celluleLumineuseAssociee.estAllume()) {
             g.setColor(Color.yellow);
+        }   
+        else if (celluleLumineuseAssociee.estAutre()) {
+            g.setColor(Color.blue);
         }   
       g.fillOval(0,0,largeur,hauteur);  
     
-    }
 //this.setText(celluleLumineuseAssociee.toString()+"e");
+}
 }
 
